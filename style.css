@@ -11,6 +11,7 @@ body{
 .input-area{
     background-color: rgb(200, 240, 230);
 }
+/* input tag name  */
 .info-name{
     font-size: 18px;
 }
