@@ -2,15 +2,11 @@ function getInput(inputName) {
   const input = document.getElementById(inputName + "-input");
   let inputValue = input.value;
   let convertToNumber = parseFloat(inputValue);
-  if (convertToNumber < 0) {
-    let errorMsg1 = document.getElementById("error-msg2");
-    errorMsg1.innerText = "Please Enter e Valid Number!";
-  }
-  if (typeof convertToNumber == "string") {
-    let errorMsg1 = document.getElementById("error-msg2");
-    errorMsg1.innerText = "Please Enter e Valid Number!";
-  } else {
+  if (convertToNumber > 0 && typeof convertToNumber == "number") {
     return convertToNumber;
+  } else {
+    let errorMsg1 = document.getElementById("error-msg2");
+    errorMsg1.innerText = "Please Enter e Valid Number!";
   }
 }
 function totalExpenses() {
