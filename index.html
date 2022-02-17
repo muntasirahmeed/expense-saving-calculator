@@ -51,19 +51,19 @@
                   <input id="clothes-input" class="form-control w-75" type="text">
               </div>
               <div class="text-center">
-                  <p class="text-center d-none">Please Enter a valid Number!</p>
+                  <p id="error-msg" class="text-center text-danger "></p>
                   <button id="calculate-button" class="btn btn-info my-2">Calculate</button>
               </div>
               <div class="my-3">
-                  <h5 id="total-expenses" class="text-center">Total Expenses: $<span>00</span></h5>
-                  <h5 id="balance" class="text-center">Balance: $<span>00</span></h5>
+                  <h5  class="text-center">Total Expenses: $<span id="total-expenses">00</span></h5>
+                  <h5 class="text-center">Balance: $<span id="balance" >00</span></h5>
               </div>
               <div class="d-flex align-items-center justify-content-end pe-5 my-3">
-                  <span class="me-2">Save:</span><input class="form-control w-50" type="text"><span class="mx-2">%</span><button id="save-button" class="btn btn-info px-3 py-1">Save</button>
+                  <span class="me-2">Save:</span><input id="save-input" class="form-control w-50" type="text"><span class="mx-2">%</span><button id="save-button" class="btn btn-info px-3 py-1">Save</button>
               </div>
               <div class="my-3">
-                  <h5 id="saving-amount" class="text-center">Saving Amount: $<span>00</span></h5>
-                  <h5 id="remaining-balance" class="text-center">Remaining Balance: $<span>00</span></h5>
+                  <h5 class="text-center">Saving Amount: $<span id="saving-amount">00</span></h5>
+                  <h5 class="text-center">Remaining Balance: $<span id="remaining-balance">00</span></h5>
               </div>
              
             </div>
