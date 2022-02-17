@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
 }
+/* heading on top  */
 .heading{
     color: rgb(7, 133, 138);
     font-weight: 500 !important;
