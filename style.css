@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    color: rgb(9, 198, 204);
+    font-weight: 500 !important;
+}
+.input-area{
+    background-color: rgb(204, 248, 237);
+}
