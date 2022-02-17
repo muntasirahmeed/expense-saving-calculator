@@ -1,16 +1,17 @@
 function getInput(inputName) {
   const input = document.getElementById(inputName + "-input");
   let inputValue = input.value;
-  if ( typeof inputValue != "number") {
-    let errorMsg = document.getElementById("error-msg");
-    errorMsg.innerText = "Please Enter a Valid Number!";
-  }
-  else {
-      let errorMsg = document.getElementById("error-msg");
-      errorMsg.style.display ='block'
-    }
   let convertToNumber = parseFloat(inputValue);
-  return convertToNumber;
+  if (convertToNumber < 0) {
+    let errorMsg1 = document.getElementById("error-msg2");
+    errorMsg1.innerText = "Please Enter e Valid Number!";
+  }
+  if (typeof convertToNumber == "string") {
+    let errorMsg1 = document.getElementById("error-msg2");
+    errorMsg1.innerText = "Please Enter e Valid Number!";
+  } else {
+    return convertToNumber;
+  }
 }
 function totalExpenses() {
   let food = getInput("food");
@@ -18,16 +19,22 @@ function totalExpenses() {
   let clothes = getInput("clothes");
   let totalExpenses = food + rent + clothes;
   return totalExpenses;
+  
 }
 document
   .getElementById("calculate-button")
   .addEventListener("click", function () {
     let incomeInput = getInput("income");
     let expenses = totalExpenses();
-    let totalMoney = document.getElementById("total-expenses");
-    totalMoney.innerText = expenses;
-    let balance = document.getElementById("balance");
-    balance.innerText = incomeInput - expenses;
+    if (expenses > incomeInput) {
+      let errorMsg = document.getElementById("error-msg");
+      errorMsg.innerText = "Your expenses more then your income!";
+    } else {
+      let totalMoney = document.getElementById("total-expenses");
+      totalMoney.innerText = expenses;
+      let balance = document.getElementById("balance");
+      balance.innerText = incomeInput - expenses;
+    }
   });
 //   save button
 document.getElementById("save-button").addEventListener("click", function () {
@@ -35,12 +42,18 @@ document.getElementById("save-button").addEventListener("click", function () {
   let incomeInput = getInput("income");
   let saveInput = getInput("save");
   let save = document.getElementById("saving-amount");
-  let saveAmount = (incomeInput / 100) * saveInput;
-  save.innerText = saveAmount;
   let balance = document.getElementById("balance");
-  let totalbalance = incomeInput - totalExpensesAmount;
-  balance.innerText = totalbalance;
   let remainingBalance = document.getElementById("remaining-balance");
-  let totalReamin = totalbalance - saveAmount;
-  remainingBalance.innerText = totalReamin;
+
+  let saveAmount = (incomeInput / 100) * saveInput;
+  let totalbalance = incomeInput - totalExpensesAmount;
+  let totalRemain = totalbalance - saveAmount;
+  if (saveAmount > totalbalance) {
+    let errorMsg = document.getElementById("error-msg3");
+    errorMsg.innerText = "Your don't have enough money to save!";
+  } else {
+    save.innerText = saveAmount;
+    balance.innerText = totalbalance;
+    remainingBalance.innerText = totalRemain;
+  }
 });
