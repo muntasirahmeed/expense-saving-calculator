@@ -7,6 +7,7 @@ body{
     color: rgb(7, 133, 138);
     font-weight: 500 !important;
 }
+/* all input area body color  */
 .input-area{
     background-color: rgb(200, 240, 230);
 }
