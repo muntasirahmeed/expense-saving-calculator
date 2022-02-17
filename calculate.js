@@ -1,3 +1,4 @@
+/*****************    Function 01 ********************/
 function getInput(inputName) {
   const input = document.getElementById(inputName + "-input");
   let inputValue = input.value;
@@ -9,14 +10,19 @@ function getInput(inputName) {
     errorMsg1.innerText = "Please Enter e Valid Number!";
   }
 }
+
+/*****************    Function 02: ********************/
+
 function totalExpenses() {
   let food = getInput("food");
   let rent = getInput("rent");
   let clothes = getInput("clothes");
   let totalExpenses = food + rent + clothes;
   return totalExpenses;
-  
 }
+
+/*****************    calculate Button ********************/
+
 document
   .getElementById("calculate-button")
   .addEventListener("click", function () {
@@ -32,7 +38,9 @@ document
       balance.innerText = incomeInput - expenses;
     }
   });
-//   save button
+
+/*****************    Save Button ********************/
+
 document.getElementById("save-button").addEventListener("click", function () {
   let totalExpensesAmount = totalExpenses();
   let incomeInput = getInput("income");
@@ -40,7 +48,6 @@ document.getElementById("save-button").addEventListener("click", function () {
   let save = document.getElementById("saving-amount");
   let balance = document.getElementById("balance");
   let remainingBalance = document.getElementById("remaining-balance");
-
   let saveAmount = (incomeInput / 100) * saveInput;
   let totalbalance = incomeInput - totalExpensesAmount;
   let totalRemain = totalbalance - saveAmount;
